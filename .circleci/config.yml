@@ -16,7 +16,7 @@ jobs:
            command: wget -q --user=$AQUA_USER --password=$AQUA_PASSWORD https://download.aquasec.com/scanner/4.6.0/scannercli
       - run:
           name: Check ScannerCLI
-          command: ls-la && chmod +x scannercli
+          command: ls -la && chmod +x scannercli
       - run:
           name: Scan Docker image
           command: ./scannercli
