@@ -19,7 +19,7 @@ jobs:
           command: ls -la && chmod +x scannercli
       - run:
           name: Scan Docker image
-          command: ./scannercli
+          command: sudo ./scannercli scan --dockerless -U $API_USER -P API_PASSWORD -H http://demo1351-vm0.aquasec.com $IMAGE_NAME:latest --local
 workflows:
   version: 2
   build-master:
