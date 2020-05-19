@@ -2,7 +2,7 @@ version: 2
     jobs:
       build:
         environment:
-          IMAGE_NAME: jonathancardoso/building-on-ci
+          IMAGE_NAME: dstubked/circle
         docker:
           - image: circleci/buildpack-deps:stretch
         steps:
