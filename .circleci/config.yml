@@ -10,7 +10,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build Docker image
-          command: docker build -t $IMAGE_NAME:latest --build-arg AQUA_SERVER_URL=${AQUA_SERVER_URL} --build-arg AQUA_USERNAME=${API_USER} --build-arg AQUA_PASSWORD=${API_PASSWORD} --no-cache . > scanout.html.tmp
+          command: docker build -t $IMAGE_NAME:latest --build-arg AQUA_SERVER_URL=${AQUA_SERVER_URL} --build-arg AQUA_USERNAME=${AQUA_USERNAME} --build-arg AQUA_PASSWORD=${AQUA_PASSWORD} --no-cache . > scanout.html.tmp
       - run:
           name: Format Aqua Report
           command: sed -n '/<html/,/<\/html>/p' scanout.html.tmp > scanout.html
