@@ -20,10 +20,12 @@ RUN ./microscanner --no-verify --html
 RUN rm -rf /microscanner
 ```
 ## CircleCI
-Add environment variables in your Circle CI project for
+Add environment variables in your Circle CI project for:
+```
 AQUA_SERVER_URL - This should be the URL to your Aqua Console. It must be reachable from CircleCI
 AQUA_USERNAME - This will be the API user to call the scan. Please use a least privileged account and not administrator!
 AQUA_PASSWORD - This will be the API user password
+```
 
 ## Scan
 Scan and view the report generated as an artefact in your project
