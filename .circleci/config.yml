@@ -15,7 +15,7 @@ jobs:
           name: Check Artifact
           command: pwd && ls -la
       - store_artifacts:
-          path: /scanout.html
+          path: /home/circleci/project/scanout.html
 workflows:
   version: 2
   build-master:
