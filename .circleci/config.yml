@@ -13,7 +13,7 @@ jobs:
           command: docker build -t $IMAGE_NAME:latest --build-arg AQUA_SERVER_URL=${AQUA_SERVER_URL} --build-arg AQUA_USERNAME=${API_USER} --build-arg AQUA_PASSWORD=${API_PASSWORD} --no-cache . > scanout.html
       - run:
           name: Check Artifact
-          command: pwd && la -la
+          command: pwd && ls -la
       - store_artifacts:
           path: /scanout.html
 workflows:
