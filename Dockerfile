@@ -3,10 +3,11 @@ ARG AQUA_SERVER_URL
 ARG AQUA_USERNAME
 ARG AQUA_PASSWORD
 
-RUN apk add --no-cache ca-certificates && update-ca-certificates && \
-wget -O /microscanner https://get.aquasec.com/microscanner && \
-chmod +x /microscanner && \
-/microscanner && \
-rm -rf /microscanner
+RUN apk add --no-cache ca-certificates 
+RUN update-ca-certificates
+ADD https://get.aquasec.com/microscanner .
+RUN chmod +x /microscanner
+RUN ./microscanner
+RUN rm -rf /microscanner
     
 ENTRYPOINT [ "echo" ]
