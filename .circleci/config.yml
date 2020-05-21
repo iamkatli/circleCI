@@ -1,4 +1,4 @@
-version: 2.1
+version: 2.0
 jobs:
   build:
     environment:
@@ -11,15 +11,15 @@ jobs:
       - run:
           name: Build Docker image
           command: docker build -t $IMAGE_NAME:latest .
-      - run:
-           name: Get Aqua ScannerCLI
-           command: wget -q --user=$AQUA_USER --password=$AQUA_PASSWORD https://download.aquasec.com/scanner/4.6.0/scannercli
-      - run:
-          name: Check ScannerCLI
-          command: ls -la && chmod +x scannercli
-      - run:
-          name: Scan Docker image
-          command: sudo ./scannercli scan --dockerless -U $API_USER -P $API_PASSWORD -H http://demo1351-vm0.aquasec.com $IMAGE_NAME:latest --local
+#      - run:
+#           name: Get Aqua ScannerCLI
+#           command: wget -q --user=$AQUA_USER --password=$AQUA_PASSWORD https://download.aquasec.com/scanner/4.6.0/scannercli
+#      - run:
+#          name: Check ScannerCLI
+#          command: ls -la && chmod +x scannercli
+#      - run:
+#          name: Scan Docker image
+#          command: sudo ./scannercli scan --dockerless -U $API_USER -P $API_PASSWORD -H http://demo1351-vm0.aquasec.com $IMAGE_NAME:latest --local
 workflows:
   version: 2
   build-master:
