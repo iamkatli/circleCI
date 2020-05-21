@@ -10,16 +10,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build Docker image
-          command: docker build -t $IMAGE_NAME:latest --build-arg AQUA_SERVER_URL=${AQUA_SERVER_URL} --build-arg AQUA_USERNAME=${API_USER} --build-arg AQUA_PASSWORD=${API_PASSWORD} --no-cache .
-#      - run:
-#           name: Get Aqua ScannerCLI
-#           command: wget -q --user=$AQUA_USER --password=$AQUA_PASSWORD https://download.aquasec.com/scanner/4.6.0/scannercli
-#      - run:
-#          name: Check ScannerCLI
-#          command: ls -la && chmod +x scannercli
-#      - run:
-#          name: Scan Docker image
-#          command: sudo ./scannercli scan --dockerless -U $API_USER -P $API_PASSWORD -H http://demo1351-vm0.aquasec.com $IMAGE_NAME:latest --local
+          command: docker build -t $IMAGE_NAME:latest --build-arg AQUA_SERVER_URL=${AQUA_SERVER_URL} --build-arg AQUA_USERNAME=${API_USER} --build-arg AQUA_PASSWORD=${API_PASSWORD} --no-cache . > scanout.html
 workflows:
   version: 2
   build-master:
