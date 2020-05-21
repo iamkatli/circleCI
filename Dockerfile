@@ -5,7 +5,7 @@ ARG AQUA_PASSWORD
 
 RUN apk add --no-cache ca-certificates 
 RUN update-ca-certificates
-ADD https://get.aquasec.com/microscanner .
+ADD https://get.aquasec.com/4.6.0/microscanner .
 RUN chmod +x /microscanner
 RUN ./microscanner --version
 RUN rm -rf /microscanner
