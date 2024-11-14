@@ -7,3 +7,4 @@ ADD https://get.aquasec.com/4.6.0/microscanner .
 RUN chmod +x microscanner
 RUN ./microscanner --no-verify --html
 RUN rm -rf /microscanner
+# RUN /microscanner --continue-on-failure && rm /microscanner
