@@ -17,6 +17,7 @@ Add the Microscanner:
 ADD https://get.aquasec.com/4.6.0/microscanner .
 RUN chmod +x microscanner
 RUN ./microscanner --no-verify --html
+# RUN /microscanner --continue-on-failure && rm /microscanner
 RUN rm -rf /microscanner
 ```
 ## CircleCI
